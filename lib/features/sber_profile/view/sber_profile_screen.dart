@@ -75,145 +75,202 @@ class SberProfileScreen extends StatelessWidget {
         // decoration: BoxDecoration(color: Colors.grey),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'У вас подключено',
-                        style: lightTheme.textTheme.titleMedium,
-                      ),
-                    ),
-                    Container(
-                      child: Text(
-                        "Подписки, автоплатежи и сервисы, на которые вы подписались",
-                        style: lightTheme.textTheme.labelMedium,
-                      ),
-                    )
-                  ],
-                )),
-              ],
-            ),
+            ServicesSection(),
             SizedBox(
               height: 20,
-            ),
-            Container(
-              child: SizedBox(
-                height: 135,
-                child: CardList(),
-              ),
             ),
             SizedBox(
               height: 40,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'Тарифы и лимиты',
-                        style: lightTheme.textTheme.titleMedium,
-                      ),
-                    ),
-                    Container(
-                      child: Text(
-                        "Для операций в Сбербанк Онлайн",
-                        style: lightTheme.textTheme.labelMedium,
-                      ),
-                    )
-                  ],
-                )),
-              ],
-            ),
+            TarifsSection(),
           ],
         ),
+      ),
+      ListOfTarifs(),
+      InterestsSection(),
+      Container(
+        // padding: EdgeInsets.symmetric(horizontal: 12),
+        height: 150,
+        child: CardList(),
       ),
       SizedBox(
-        height: 230,
-        child: ListView.separated(
-            itemCount: listOfTarifs.length,
-            separatorBuilder: (context, i) => Container(
-                  padding: const EdgeInsets.only(
-                      left:
-                          64), // Установите отступы по горизонтали по вашему выбору
-                  child:
-                      Divider(height: 2.0, color: Colors.grey.withOpacity(0.3)),
-                ),
-            itemBuilder: (context, index) => ListTile(
-                  title: Text(
-                    listOfTarifs[index].name,
-                    style: lightTheme.textTheme.bodyMedium,
-                  ),
-                  subtitle: Text(listOfTarifs[index].addInfo,
-                      style: lightTheme.textTheme.labelMedium),
-                  leading: listOfTarifs[index].imageOfTarif,
-                  trailing: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 15,
-                    color: Colors.black.withOpacity(0.5),
-                  ),
-                )),
-      ),
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'Интересы',
-                        style: lightTheme.textTheme.titleMedium,
-                      ),
-                    ),
-                    Text(
-                      "Мы подбираем истории и предложения по темам, которые вам нравятся",
-                      style: lightTheme.textTheme.labelMedium,
-                    )
-                  ],
-                )),
-              ],
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Wrap(
-              spacing: 8.0,
-              // runSpacing: 4,
-              children: listOfCategories.map((category) {
-                return Chip(
-                  label: Text(category.name),
-                  backgroundColor: Colors.black.withOpacity(0.08),
-                  labelStyle: lightTheme.textTheme.bodySmall,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    side: BorderSide(color: Colors.transparent, width: 0),
-                  ),
-                );
-              }).toList(),
-            ),
-          ],
-        ),
-      ),
-
-      // CardList(),
+        height: 20,
+      )
+      // CardList1(),
     ]);
+  }
+}
+
+class TarifsSection extends StatelessWidget {
+  const TarifsSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'Тарифы и лимиты',
+                style: lightTheme.textTheme.titleMedium,
+              ),
+            ),
+            Container(
+              child: Text(
+                "Для операций в Сбербанк Онлайн",
+                style: lightTheme.textTheme.labelMedium,
+              ),
+            )
+          ],
+        )),
+      ],
+    );
+  }
+}
+
+class ServicesSection extends StatelessWidget {
+  const ServicesSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'У вас подключено',
+                style: lightTheme.textTheme.titleMedium,
+              ),
+            ),
+            Container(
+              child: Text(
+                "Подписки, автоплатежи и сервисы, на которые вы подписались",
+                style: lightTheme.textTheme.labelMedium,
+              ),
+            )
+          ],
+        )),
+      ],
+    );
+  }
+}
+
+class InterestsSection extends StatelessWidget {
+  const InterestsSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Expanded(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      'Интересы',
+                      style: lightTheme.textTheme.titleMedium,
+                    ),
+                  ),
+                  Text(
+                    "Мы подбираем истории и предложения по темам, которые вам нравятся",
+                    style: lightTheme.textTheme.labelMedium,
+                  )
+                ],
+              )),
+            ],
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          CategoriesChips(),
+        ],
+      ),
+    );
+  }
+}
+
+class CategoriesChips extends StatelessWidget {
+  const CategoriesChips({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8.0,
+      // runSpacing: 4,
+      children: listOfCategories.map((category) {
+        return Chip(
+          label: Text(category.name),
+          backgroundColor: Colors.black.withOpacity(0.08),
+          labelStyle: lightTheme.textTheme.bodySmall,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(color: Colors.transparent, width: 0),
+          ),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class ListOfTarifs extends StatelessWidget {
+  const ListOfTarifs({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 230,
+      child: ListView.separated(
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: listOfTarifs.length,
+          separatorBuilder: (context, i) => Container(
+                padding: const EdgeInsets.only(
+                    left:
+                        64), // Установите отступы по горизонтали по вашему выбору
+                child:
+                    Divider(height: 2.0, color: Colors.grey.withOpacity(0.3)),
+              ),
+          itemBuilder: (context, index) => ListTile(
+                title: Text(
+                  listOfTarifs[index].name,
+                  style: lightTheme.textTheme.bodyMedium,
+                ),
+                subtitle: Text(listOfTarifs[index].addInfo,
+                    style: lightTheme.textTheme.labelMedium),
+                leading: listOfTarifs[index].imageOfTarif,
+                trailing: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  size: 15,
+                  color: Colors.black.withOpacity(0.5),
+                ),
+              )),
+    );
   }
 }
 
@@ -223,6 +280,7 @@ class CardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.all(8),
       scrollDirection: Axis.horizontal,
       itemCount: listOfCards.length, // Количество карточек
       itemBuilder: (context, index) {
@@ -251,8 +309,7 @@ class CardList extends StatelessWidget {
           // child: Card(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            height: 135, // Высота карточки
-            width: 215,
+            width: 210,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,9 +328,9 @@ class CardList extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -298,6 +355,51 @@ class CardList extends StatelessWidget {
           // )
         );
       },
+    );
+  }
+}
+
+class CardList1 extends StatelessWidget {
+  final List<String> items = [
+    'Элемент 1',
+    'Элемент 2',
+    'Элемент 3',
+    'Элемент 4',
+    'Элемент 5',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 140.0,
+      width: 320,
+      margin: EdgeInsets.all(16.0),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return OverflowBox(
+            maxWidth: 216,
+            maxHeight: 160,
+            child: Container(
+              margin: EdgeInsets.only(right: 8.0),
+              height: 130,
+              width: 216.0,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: Center(
+                  child: Text(
+                    items[index],
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

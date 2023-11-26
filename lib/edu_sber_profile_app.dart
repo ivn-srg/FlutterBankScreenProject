@@ -134,7 +134,7 @@ class MyTabbedWidget extends StatelessWidget {
       indicatorColor: Colors.customGreen,
       unselectedLabelStyle: lightTheme.textTheme.labelLarge,
       labelStyle: lightTheme.textTheme.bodyMedium,
-      tabs: [
+      tabs: const [
         Tab(
           text: "Профиль",
           // child: Text("Профиль", style: lightTheme.textTheme.bodyMedium,),
