@@ -71,7 +71,7 @@ class SberProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(children: [
       Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
         // decoration: BoxDecoration(color: Colors.grey),
         child: Column(
           children: [
@@ -359,47 +359,4 @@ class CardList extends StatelessWidget {
   }
 }
 
-class CardList1 extends StatelessWidget {
-  final List<String> items = [
-    'Элемент 1',
-    'Элемент 2',
-    'Элемент 3',
-    'Элемент 4',
-    'Элемент 5',
-  ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 140.0,
-      width: 320,
-      margin: EdgeInsets.all(16.0),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return OverflowBox(
-            maxWidth: 216,
-            maxHeight: 160,
-            child: Container(
-              margin: EdgeInsets.only(right: 8.0),
-              height: 130,
-              width: 216.0,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}

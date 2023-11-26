@@ -1,2 +1,2 @@
-export 'header_profile.dart';
+export 'header/header_profile.dart';
 export 'main_content.dart';
