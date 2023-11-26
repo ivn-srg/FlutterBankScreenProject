@@ -70,29 +70,20 @@ class SberProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(children: [
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
-        // decoration: BoxDecoration(color: Colors.grey),
-        child: Column(
-          children: [
-            ServicesSection(),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            TarifsSection(),
-          ],
-        ),
-      ),
-      ListOfTarifs(),
-      InterestsSection(),
+      ServicesSection(),
       Container(
         // padding: EdgeInsets.symmetric(horizontal: 12),
-        height: 150,
+        height: 173,
         child: CardList(),
       ),
+      SizedBox(
+        height: 20,
+      ),
+      TarifsSection(),
+      ListOfTarifs(),
+      InterestsSection(),
+
+      CategoriesChips(),
       SizedBox(
         height: 20,
       )
@@ -108,29 +99,32 @@ class TarifsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                'Тарифы и лимиты',
-                style: lightTheme.textTheme.titleMedium,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  'Тарифы и лимиты',
+                  style: lightTheme.textTheme.titleMedium,
+                ),
               ),
-            ),
-            Container(
-              child: Text(
-                "Для операций в Сбербанк Онлайн",
-                style: lightTheme.textTheme.labelMedium,
-              ),
-            )
-          ],
-        )),
-      ],
+              Container(
+                child: Text(
+                  "Для операций в Сбербанк Онлайн",
+                  style: lightTheme.textTheme.labelMedium,
+                ),
+              )
+            ],
+          )),
+        ],
+      ),
     );
   }
 }
@@ -142,29 +136,30 @@ class ServicesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                'У вас подключено',
-                style: lightTheme.textTheme.titleMedium,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.only(top: 30),
+      child: Row(
+        children: [
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  'У вас подключено',
+                  style: lightTheme.textTheme.titleMedium,
+                ),
               ),
-            ),
-            Container(
-              child: Text(
+              Text(
                 "Подписки, автоплатежи и сервисы, на которые вы подписались",
                 style: lightTheme.textTheme.labelMedium,
-              ),
-            )
-          ],
-        )),
-      ],
+              )
+            ],
+          )),
+        ],
+      ),
     );
   }
 }
@@ -177,7 +172,7 @@ class InterestsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
           Row(
@@ -188,7 +183,7 @@ class InterestsSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(bottom: 8),
+                    padding: const EdgeInsets.only(bottom: 5),
                     child: Text(
                       'Интересы',
                       style: lightTheme.textTheme.titleMedium,
@@ -203,9 +198,8 @@ class InterestsSection extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 16,
+            height: 12,
           ),
-          CategoriesChips(),
         ],
       ),
     );
@@ -219,20 +213,23 @@ class CategoriesChips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 8.0,
-      // runSpacing: 4,
-      children: listOfCategories.map((category) {
-        return Chip(
-          label: Text(category.name),
-          backgroundColor: Colors.black.withOpacity(0.08),
-          labelStyle: lightTheme.textTheme.bodySmall,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.transparent, width: 0),
-          ),
-        );
-      }).toList(),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16),
+      child: Wrap(
+        spacing: 8.0,
+        runSpacing: -2,
+        children: listOfCategories.map((category) {
+          return Chip(
+            label: Text(category.name),
+            backgroundColor: Colors.black.withOpacity(0.08),
+            labelStyle: lightTheme.textTheme.bodySmall,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide(color: Colors.transparent, width: 0),
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }
@@ -280,7 +277,7 @@ class CardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       scrollDirection: Axis.horizontal,
       itemCount: listOfCards.length, // Количество карточек
       itemBuilder: (context, index) {
@@ -358,5 +355,3 @@ class CardList extends StatelessWidget {
     );
   }
 }
-
-

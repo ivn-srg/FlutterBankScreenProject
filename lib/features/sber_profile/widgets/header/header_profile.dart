@@ -4,6 +4,8 @@ import 'package:untitled1/ui/theme/theme.dart';
 import 'package:untitled1/features/sber_settings/sber_settings_screen_export.dart';
 
 import '../../view/sber_profile_screen.dart';
+import 'tab_bar.dart';
+import 'top_bar.dart';
 
 class HeaderProfile extends StatelessWidget {
   const HeaderProfile({super.key});
@@ -14,7 +16,10 @@ class HeaderProfile extends StatelessWidget {
       appBar: _appBar(),
       body: const Center(
         child: TabBarView(
-          children: [SberProfileScreen(), SberSettingsScreen()],
+          children: [
+            SberProfileScreen(), 
+            SberSettingsScreen()
+          ],
         ),
       ),
     );
@@ -26,13 +31,13 @@ class HeaderProfile extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(top: 5),
         decoration: _boxDecoration(),
-        child: SafeArea(
+        child: const SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _topBar(),
-              const SizedBox(height: 10),
-              _tabBar(),
+              TopBar(),
+              SizedBox(height: 10),
+              Tabbar(),
             ],
           ),
         ),
@@ -50,80 +55,6 @@ class HeaderProfile extends StatelessWidget {
           offset: Offset(0, 4),
           spreadRadius: 0,
         )
-      ],
-    );
-  }
-
-  Widget _topBar() {
-    return Container(
-        margin: const EdgeInsets.only(top: 20),
-        padding: const EdgeInsets.symmetric(horizontal: 14),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SvgPicture.asset(
-              'assets/svg/crossIcon.svg',
-              width: 26,
-              height: 26,
-              theme: const SvgTheme(currentColor: Colors.customGreen),
-            ),
-            Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 10),
-                  width: 120,
-                  height: 120,
-                  decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      image: Image.asset('assets/images/user_avatar.png').image,
-                      fit: BoxFit.fill,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(38),
-                    ),
-                    shadows: const [
-                      BoxShadow(
-                        color: Color(0x7A1D1D25),
-                        blurRadius: 24,
-                        offset: Offset(0, 16),
-                        spreadRadius: -16,
-                      )
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 36,
-                ),
-                Text(
-                  "Екатерина",
-                  style: lightTheme.textTheme.titleLarge,
-                )
-              ],
-            ),
-            SvgPicture.asset(
-              'assets/svg/exitIcon.svg',
-              width: 26,
-              height: 26,
-              theme: const SvgTheme(currentColor: Colors.customGreen),
-            ),
-          ],
-        ));
-  }
-
-  Widget _tabBar() {
-    return TabBar(
-      indicatorSize: TabBarIndicatorSize.tab,
-      indicatorColor: Colors.customGreen,
-      unselectedLabelStyle: lightTheme.textTheme.labelLarge,
-      labelStyle: lightTheme.textTheme.bodyMedium,
-      tabs: const [
-        Tab(
-          text: "Профиль",
-        ),
-        Tab(
-          text: "Настройки",
-        ),
       ],
     );
   }

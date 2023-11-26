@@ -14,7 +14,7 @@ final lightTheme = ThemeData(
       ),
       titleMedium: const TextStyle(
         color: Colors.black,
-        fontSize: 20,
+        fontSize: 21,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w700,
         letterSpacing: -0.70,
