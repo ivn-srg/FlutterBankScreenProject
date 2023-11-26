@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Tarif {
@@ -10,11 +11,34 @@ class Tarif {
     this.addInfo,
     this.imageOfTarif,
   );
-  // {
-  //   if (this.addInfo == null) {
-  //     this.addInfo = "";
-  //   } else {
-  //     this.addInfo = addInfo;
-  //   }
-  // }
+
+  static var listOfTarifs = [
+    Tarif(
+        "Изменить суточный лимит",
+        "На платежи и переводы",
+        SvgPicture.asset(
+          'assets/svg/speedometer.svg',
+          width: 36,
+          height: 36,
+          theme: const SvgTheme(currentColor: Colors.customGreen),
+        )),
+    Tarif(
+        "Переводы без комиссии",
+        "Показать остаток в этом месяце",
+        SvgPicture.asset(
+          'assets/svg/percentIcon.svg',
+          width: 36,
+          height: 36,
+          theme: const SvgTheme(currentColor: Colors.customGreen),
+        )),
+    Tarif(
+        "Информация о тарифах и лимитах",
+        "",
+        SvgPicture.asset(
+          'assets/svg/arrowIcon.svg',
+          width: 36,
+          height: 36,
+          theme: const SvgTheme(currentColor: Colors.customGreen),
+        ))
+  ];
 }
