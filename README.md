@@ -1,16 +1,23 @@
-# untitled1
+# Flutter Bank Screen App
 
-A new Flutter project.
+A new my educational Flutter project
 
-## Getting Started
+## Описание: Приложение представляет из себя простое приложение из двух экранов, построенных на базе dart и flutter
 
-This project is a starting point for a Flutter application.
+## Экраны приложения
 
-A few resources to get you started if this is your first Flutter project:
+![Скриншот экрана]()
+![Скриншот экрана]()
+![Скриншот экрана]()
+![Скриншот экрана]()
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Требования
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Связь
+
+[Telegram](https://t.me/ivn_srg)
+
+## Автор
+
+Иванов Сергей 2023
