@@ -8,7 +8,7 @@ final lightTheme = ThemeData(
     textTheme: TextTheme(
       titleLarge: const TextStyle(
         color: Colors.black,
-        fontSize: 24,
+        fontSize: 26,
         fontFamily: 'SF Pro Display',
         fontWeight: FontWeight.w700,
       ),
@@ -19,33 +19,42 @@ final lightTheme = ThemeData(
         fontWeight: FontWeight.w700,
         letterSpacing: -0.70,
       ),
+      bodyLarge: const TextStyle(
+        color: Colors.black,
+        fontSize: 17,
+        fontFamily: 'SF Pro Text',
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.5,
+      ),
       bodyMedium: const TextStyle(
         color: Colors.black,
-        fontSize: 16,
+        fontSize: 17,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.40,
+        height: 1.3
       ),
       bodySmall: const TextStyle(
         color: Colors.black,
-        fontSize: 14,
+        fontSize: 15,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.41,
       ),
       labelLarge: TextStyle(
         color: Colors.black.withOpacity(0.55),
-        fontSize: 16,
+        fontSize: 17,
         fontFamily: 'SF Pro Text',
-        fontWeight: FontWeight.normal,
-        letterSpacing: -0.40,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.5,
       ),
       labelMedium: TextStyle(
-        color: Colors.black.withOpacity(0.55),
-        fontSize: 14,
+        color: Colors.black.withOpacity(0.6),
+        fontSize: 15,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.42,
+        height: 1.2
       ),
       labelSmall: TextStyle(
         color: Colors.black.withOpacity(0.55),

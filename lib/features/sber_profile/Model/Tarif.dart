@@ -18,27 +18,24 @@ class Tarif {
         "На платежи и переводы",
         SvgPicture.asset(
           'assets/svg/speedometer.svg',
-          width: 36,
-          height: 36,
-          theme: const SvgTheme(currentColor: Colors.customGreen),
+          width: 38,
+          height: 38,
         )),
     Tarif(
         "Переводы без комиссии",
         "Показать остаток в этом месяце",
         SvgPicture.asset(
           'assets/svg/percentIcon.svg',
-          width: 36,
-          height: 36,
-          theme: const SvgTheme(currentColor: Colors.customGreen),
+          width: 38,
+          height: 38,
         )),
     Tarif(
         "Информация о тарифах и лимитах",
         "",
         SvgPicture.asset(
           'assets/svg/arrowIcon.svg',
-          width: 36,
-          height: 36,
-          theme: const SvgTheme(currentColor: Colors.customGreen),
+          width: 38,
+          height: 38,
         ))
   ];
 }

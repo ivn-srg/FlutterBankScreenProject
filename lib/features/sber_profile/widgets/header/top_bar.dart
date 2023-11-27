@@ -20,7 +20,6 @@ class TopBar extends StatelessWidget {
               'assets/svg/crossIcon.svg',
               width: 26,
               height: 26,
-              theme: const SvgTheme(currentColor: Colors.customGreen),
             ),
             Column(
               children: [
@@ -47,7 +46,7 @@ class TopBar extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 36,
+                  height: 40,
                 ),
                 Text(
                   "Екатерина",
@@ -59,7 +58,6 @@ class TopBar extends StatelessWidget {
               'assets/svg/exitIcon.svg',
               width: 26,
               height: 26,
-              theme: const SvgTheme(currentColor: Colors.customGreen),
             ),
           ],
         ));

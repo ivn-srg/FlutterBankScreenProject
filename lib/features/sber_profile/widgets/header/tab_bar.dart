@@ -12,7 +12,7 @@ class Tabbar extends StatelessWidget {
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorColor: Colors.customGreen,
       unselectedLabelStyle: lightTheme.textTheme.labelLarge,
-      labelStyle: lightTheme.textTheme.bodyMedium,
+      labelStyle: lightTheme.textTheme.bodyLarge,
       tabs: const [
         Tab(
           text: "Профиль",

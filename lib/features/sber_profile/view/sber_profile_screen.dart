@@ -8,14 +8,8 @@ class SberProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(children: const [
       ServicesSection(),
-      SizedBox(
-        height: 20,
-      ),
       TarifsSection(),
-      InterestsSection(),
-      SizedBox(
-        height: 20,
-      )
+      InterestsSection()
     ]);
   }
 }

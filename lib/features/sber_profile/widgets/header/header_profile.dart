@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:untitled1/ui/theme/theme.dart';
 import 'package:untitled1/features/sber_settings/sber_settings_screen_export.dart';
 
 import '../../view/sber_profile_screen.dart';
@@ -27,7 +25,7 @@ class HeaderProfile extends StatelessWidget {
 
   PreferredSize _appBar() {
     return PreferredSize(
-      preferredSize: const Size.fromHeight(295),
+      preferredSize: const Size.fromHeight(300),
       child: Container(
         margin: const EdgeInsets.only(top: 5),
         decoration: _boxDecoration(),

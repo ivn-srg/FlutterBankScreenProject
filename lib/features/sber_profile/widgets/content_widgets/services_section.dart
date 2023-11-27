@@ -36,7 +36,7 @@ class ServicesSection extends StatelessWidget {
             ],
           ),
         ),
-        CardList()
+        const CardList(),
       ],
     );
   }
@@ -47,38 +47,21 @@ class CardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cards = CardOffer.listOfCards;
+
     return SizedBox(
-      height: 173,
+      height: 175,
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         scrollDirection: Axis.horizontal,
-        itemCount: CardOffer.listOfCards.length, // Количество карточек
+        itemCount: cards.length,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.only(right: 8),
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              shadows: const [
-                BoxShadow(
-                  color: Color(0x114F4F6C),
-                  blurRadius: 14,
-                  offset: Offset(0, 8),
-                  spreadRadius: 0,
-                ),
-                BoxShadow(
-                  color: Color(0x14000000),
-                  blurRadius: 10,
-                  offset: Offset(0, 2),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
+            decoration: shapeDecoration(),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              width: 210,
+              padding: const EdgeInsets.all(16),
+              width: 225,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,13 +69,11 @@ class CardList extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        child: CardOffer.listOfCards[index].imageOfCard,
-                      ),
-                      const SizedBox(
-                        width: 15,
+                        margin: const EdgeInsets.only(right: 12),
+                        child: cards[index].imageOfCard,
                       ),
                       Text(
-                        CardOffer.listOfCards[index].cardName,
+                        cards[index].cardName,
                         style: lightTheme.textTheme.bodyMedium,
                       )
                     ],
@@ -102,11 +83,11 @@ class CardList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        CardOffer.listOfCards[index].cardInfo,
+                        cards[index].cardInfo,
                         style: lightTheme.textTheme.bodySmall,
                       ),
                       Text(
-                        CardOffer.listOfCards[index].cardCost,
+                        cards[index].cardCost,
                         style: lightTheme.textTheme.labelMedium,
                       )
                     ],
@@ -118,6 +99,29 @@ class CardList extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  ShapeDecoration shapeDecoration() {
+    return ShapeDecoration(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      shadows: const [
+        BoxShadow(
+          color: Color(0x114F4F6C),
+          blurRadius: 14,
+          offset: Offset(0, 8),
+          spreadRadius: 0,
+        ),
+        BoxShadow(
+          color: Color(0x14000000),
+          blurRadius: 10,
+          offset: Offset(0, 2),
+          spreadRadius: 0,
+        )
+      ],
     );
   }
 }
