@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class Tabbar extends StatelessWidget {
@@ -13,12 +14,12 @@ class Tabbar extends StatelessWidget {
       indicatorColor: Colors.customGreen,
       unselectedLabelStyle: lightTheme.textTheme.labelLarge,
       labelStyle: lightTheme.textTheme.bodyLarge,
-      tabs: const [
+      tabs: [
         Tab(
-          text: "Профиль",
+          text: strings.tabName1,
         ),
         Tab(
-          text: "Настройки",
+          text: strings.tabName2,
         ),
       ],
     );

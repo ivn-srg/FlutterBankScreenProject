@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class TopBar extends StatelessWidget {
@@ -49,7 +50,7 @@ class TopBar extends StatelessWidget {
                   height: 40,
                 ),
                 Text(
-                  "Екатерина",
+                  strings.userName,
                   style: lightTheme.textTheme.titleLarge,
                 )
               ],
