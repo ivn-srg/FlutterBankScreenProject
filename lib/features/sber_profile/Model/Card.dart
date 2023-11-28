@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/ui/images.dart';
 
 class CardOffer {
   String cardName;
@@ -14,7 +15,7 @@ class CardOffer {
         "Платеж 9 июля",
         "199 ₽ в месяц",
         Image.asset(
-          "assets/images/sberPraimIcon.png",
+          AppImages.sberPraimIcon,
           height: 36,
         )),
     CardOffer(
@@ -22,7 +23,7 @@ class CardOffer {
         "Автопродление 21 августа",
         "199 ₽ в месяц",
         Image.asset(
-          "assets/images/percentFillIcon.png",
+          AppImages.percentFillIcon,
           height: 36,
         )),
   ];

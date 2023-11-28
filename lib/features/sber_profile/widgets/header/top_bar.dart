@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/theme/theme.dart';
+import '/ui/images.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({
@@ -30,7 +31,7 @@ class TopBar extends StatelessWidget {
                   height: 120,
                   decoration: ShapeDecoration(
                     image: DecorationImage(
-                      image: Image.asset('assets/images/user_avatar.png').image,
+                      image: Image.asset(AppImages.userAvatar).image,
                       fit: BoxFit.fill,
                     ),
                     shape: RoundedRectangleBorder(

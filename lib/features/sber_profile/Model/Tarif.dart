@@ -1,9 +1,10 @@
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:untitled1/ui/images.dart';
 
 class Tarif {
   String name;
   String addInfo;
-  SvgPicture imageOfTarif;
+  Image imageOfTarif;
 
   Tarif(
     this.name,
@@ -15,24 +16,24 @@ class Tarif {
     Tarif(
         "Изменить суточный лимит",
         "На платежи и переводы",
-        SvgPicture.asset(
-          'assets/svg/speedometer.svg',
+        Image.asset(
+          AppImages.speedometer,
           width: 38,
           height: 38,
         )),
     Tarif(
         "Переводы без комиссии",
         "Показать остаток в этом месяце",
-        SvgPicture.asset(
-          'assets/svg/percentIcon.svg',
+        Image.asset(
+          AppImages.percent,
           width: 38,
           height: 38,
         )),
     Tarif(
         "Информация о тарифах и лимитах",
         "",
-        SvgPicture.asset(
-          'assets/svg/arrowIcon.svg',
+        Image.asset(
+          AppImages.arrows,
           width: 38,
           height: 38,
         ))
