@@ -14,7 +14,7 @@ class InterestsSection extends StatelessWidget {
     return Column(
       children: [
         DescriptionOfSection(strings.thirdSectionTitle, strings.thirdSectionSubtitle),
-        const CategoriesChips(),
+        const CategoryChipsState(),
       ],
     );
   }

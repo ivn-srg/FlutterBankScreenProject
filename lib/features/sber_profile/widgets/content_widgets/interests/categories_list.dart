@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/Model/CategoryOfInterest.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
-class CategoriesChips extends StatelessWidget {
-  const CategoriesChips({
-    super.key,
-  });
+class CategoryChipsState extends StatefulWidget {
+  const CategoryChipsState({super.key});
+
+
+  @override
+  State<CategoryChipsState> createState() => __CategoryChipsStateState();
+}
+
+class __CategoryChipsStateState extends State<CategoryChipsState> {
+  var categories = CategoryOfInterest.listOfCategories;
 
   @override
   Widget build(BuildContext context) {
-    var categories = CategoryOfInterest.listOfCategories;
-
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Wrap(
@@ -18,7 +22,13 @@ class CategoriesChips extends StatelessWidget {
         children: categories.map((category) {
           return Container(
             margin: const EdgeInsets.only(right: 5),
-            child: Chip(
+            child: ChoiceChip(
+              selected: category.isSelected,
+              onSelected: (selected) {
+                setState(() {
+                  category.isSelected = selected;
+                });
+              },
               label: Text(category.name),
               backgroundColor: Colors.black.withOpacity(0.08),
               labelStyle: lightTheme.textTheme.bodySmall,
@@ -31,5 +41,6 @@ class CategoriesChips extends StatelessWidget {
         }).toList(),
       ),
     );
+    ;
   }
 }

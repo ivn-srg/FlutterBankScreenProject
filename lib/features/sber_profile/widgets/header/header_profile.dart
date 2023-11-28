@@ -9,47 +9,42 @@ class HeaderProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: DefaultTabController(
-            length: 2,
-            child: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverAppBar(
-                    expandedHeight: 280,
-                    floating: true,
-                    pinned: true,
-                    flexibleSpace: FlexibleSpaceBar(
-                      collapseMode: CollapseMode.pin,
-                      background: Container(
-                        decoration: _boxDecoration(),
-                        child: const SafeArea(child: TopBar()),
-                      ),
-                    ),
-                    bottom: const PreferredSize(
-                        preferredSize: Size.fromHeight(50), child: Tabbar()),
-                  )
-                ];
-              },
-              body: const TabBarView(
-                children: [SberProfileScreen(), SberSettingsScreen()],
-              ),
-            )
-        )
+    return Scaffold(body: DefaultTabController(length: 2, child: appBar()));
+  }
+
+  NestedScrollView appBar() {
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          SliverAppBar(
+            expandedHeight: 300,
+            floating: true,
+            pinned: true,
+            flexibleSpace: const FlexibleSpaceBar(
+              collapseMode: CollapseMode.pin,
+              background: SafeArea(child: TopBar()),
+            ),
+            bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(60),
+                child: Container(
+                    decoration: _boxDecoration(), child: const Tabbar())),
+          )
+        ];
+      },
+      body: const TabBarView(
+        children: [SberProfileScreen(), SberSettingsScreen()],
+      ),
     );
   }
 
   BoxDecoration _boxDecoration() {
-    return const BoxDecoration(
+    return BoxDecoration(
       color: Colors.white,
       boxShadow: [
         BoxShadow(
-          color: Color(0x14000014),
-          blurRadius: 16,
-          offset: Offset(0, 4),
-          spreadRadius: 0,
-        )
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 16,
+            offset: const Offset(0, 20))
       ],
     );
   }
