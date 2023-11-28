@@ -21,12 +21,7 @@ class EduSberProfileApp extends StatelessWidget {
       supportedLocales: const [
         Locale('ru'),
       ],
-      home: const DefaultTabController(
-        length: 2,
-        child: HeaderProfile(),
-      ),
+      home: const HeaderProfile(),
     );
   }
 }
-
-

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/features/sber_settings/sber_settings_screen_export.dart';
-
-import '../../view/sber_profile_screen.dart';
+import 'package:untitled1/features/sber_profile/sber_profile_screens_export.dart';
+import 'package:untitled1/features/sber_settings/view/sber_settings_screen.dart';
 import 'tab_bar.dart';
 import 'top_bar.dart';
 
@@ -11,35 +10,33 @@ class HeaderProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      body: const Center(
-        child: TabBarView(
-          children: [
-            SberProfileScreen(), 
-            SberSettingsScreen()
-          ],
-        ),
-      ),
-    );
-  }
-
-  PreferredSize _appBar() {
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(300),
-      child: Container(
-        margin: const EdgeInsets.only(top: 5),
-        decoration: _boxDecoration(),
-        child: const SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TopBar(),
-              SizedBox(height: 10),
-              Tabbar(),
-            ],
-          ),
-        ),
-      ),
+        body: DefaultTabController(
+            length: 2,
+            child: NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    expandedHeight: 280,
+                    floating: true,
+                    pinned: true,
+                    flexibleSpace: FlexibleSpaceBar(
+                      collapseMode: CollapseMode.pin,
+                      background: Container(
+                        decoration: _boxDecoration(),
+                        child: const SafeArea(child: TopBar()),
+                      ),
+                    ),
+                    bottom: const PreferredSize(
+                        preferredSize: Size.fromHeight(50), child: Tabbar()),
+                  )
+                ];
+              },
+              body: const TabBarView(
+                children: [SberProfileScreen(), SberSettingsScreen()],
+              ),
+            )
+        )
     );
   }
 

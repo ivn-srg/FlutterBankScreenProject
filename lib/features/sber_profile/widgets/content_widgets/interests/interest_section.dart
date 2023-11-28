@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/globals.dart';
 
 import 'categories_list.dart';
-import 'description_of_interest_section.dart';
+import '../description_of_section.dart';
 
 class InterestsSection extends StatelessWidget {
   const InterestsSection({
@@ -10,13 +11,10 @@ class InterestsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        DescriptionOfInterestSection(),
-        CategoriesChips(),
-        SizedBox(
-          height: 30,
-        )
+        DescriptionOfSection(strings.thirdSectionTitle, strings.thirdSectionSubtitle),
+        const CategoriesChips(),
       ],
     );
   }

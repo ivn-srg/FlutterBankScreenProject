@@ -1,11 +1,13 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
-class DescriptionOfInterestSection extends StatelessWidget {
-  const DescriptionOfInterestSection({
-    super.key,
-  });
+class DescriptionOfSection extends StatelessWidget {
+  String title;
+  String subtitle;
+
+  DescriptionOfSection(this.title, this.subtitle, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +24,12 @@ class DescriptionOfInterestSection extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  strings.thirdSectionTitle,
+                  title,
                   style: lightTheme.textTheme.titleMedium,
                 ),
               ),
               Text(
-                strings.thirdSectionSubtitle,
+                subtitle,
                 style: lightTheme.textTheme.labelMedium,
               )
             ],

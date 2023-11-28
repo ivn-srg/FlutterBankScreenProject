@@ -37,6 +37,7 @@ class ListOfTarifs extends StatelessWidget {
                   size: 14,
                   color: Colors.black.withOpacity(0.5),
                 ),
+                onTap: () {},
               )),
     );
   }

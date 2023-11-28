@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/features/sber_profile/widgets/content_widgets/description_of_section.dart';
+import 'package:untitled1/globals.dart';
 import 'card_list.dart';
-import 'description_of_service_section.dart';
 
 class ServicesSection extends StatelessWidget {
   const ServicesSection({
@@ -9,10 +10,10 @@ class ServicesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        DescriptionOfServiceSections(),
-        CardList(),
+        DescriptionOfSection(strings.firstSectionTitle, strings.firstSectionSubtitle),
+        const CardList(),
       ],
     );
   }
