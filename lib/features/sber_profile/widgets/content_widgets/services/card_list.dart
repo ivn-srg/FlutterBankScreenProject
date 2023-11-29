@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/Model/Card.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/Colors.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
@@ -11,18 +12,18 @@ class CardList extends StatelessWidget {
     var cards = CardOffer.listOfCards;
 
     return SizedBox(
-      height: 175,
+      height: AppConstants.cardContainerHeight,
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: AppConstants.horizontalPadding, vertical: AppConstants.verticalCardPaddingToContainer),
         scrollDirection: Axis.horizontal,
         itemCount: cards.length,
         itemBuilder: (context, index) {
           return Container(
-            margin: const EdgeInsets.only(right: 8),
+            margin: const EdgeInsets.only(right: AppConstants.betweenCardsPadding),
             decoration: shapeDecoration(),
             child: Container(
-              padding: const EdgeInsets.all(16),
-              width: 225,
+              padding: const EdgeInsets.all(AppConstants.innerCardPadding),
+              width: AppConstants.cardContainerWidth,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +31,7 @@ class CardList extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(right: 12),
+                        margin: const EdgeInsets.only(right: AppConstants.imageToTextCardPadding),
                         child: cards[index].imageOfCard,
                       ),
                       Text(
@@ -43,9 +44,12 @@ class CardList extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        cards[index].cardInfo,
-                        style: lightTheme.textTheme.bodySmall,
+                      Container(
+                        margin: const EdgeInsets.only(bottom: AppConstants.betweenAddInfoAndCostCardPadding),
+                        child: Text(
+                          cards[index].cardInfo,
+                          style: lightTheme.textTheme.bodySmall,
+                        ),
                       ),
                       Text(
                         cards[index].cardCost,
@@ -56,7 +60,6 @@ class CardList extends StatelessWidget {
                 ],
               ),
             ),
-            // )
           );
         },
       ),
@@ -67,7 +70,7 @@ class CardList extends StatelessWidget {
     return ShapeDecoration(
       color: AppColor.colorOfCard,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppConstants.cardBorderRadius),
       ),
       shadows: const [
         BoxShadow(

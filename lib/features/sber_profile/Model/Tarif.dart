@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/images.dart';
 
 class Tarif {
@@ -18,24 +19,21 @@ class Tarif {
         "На платежи и переводы",
         Image.asset(
           AppImages.speedometer,
-          width: 38,
-          height: 38,
+          height: AppConstants.tarifImageSize,
         )),
     Tarif(
         "Переводы без комиссии",
         "Показать остаток в этом месяце",
         Image.asset(
           AppImages.percent,
-          width: 38,
-          height: 38,
+          height: AppConstants.tarifImageSize,
         )),
     Tarif(
         "Информация о тарифах и лимитах",
         "",
         Image.asset(
           AppImages.arrows,
-          width: 38,
-          height: 38,
+          height: AppConstants.tarifImageSize,
         ))
   ];
 }

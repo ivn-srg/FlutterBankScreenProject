@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class DescriptionOfSection extends StatelessWidget {
@@ -12,8 +13,8 @@ class DescriptionOfSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(horizontal: AppConstants.horizontalPadding),
+      margin: const EdgeInsets.only(bottom: AppConstants.descriptionSectionBottomPadding),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -22,7 +23,7 @@ class DescriptionOfSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.only(bottom: AppConstants.betweenTitleAndSubtitlePadding),
                 child: Text(
                   title,
                   style: lightTheme.textTheme.titleMedium,

@@ -12,7 +12,7 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 15),
+        margin: const EdgeInsets.only(top: AppConstants.topPaddingTopbar),
         color: AppColor.colorOfTopbar,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,15 +21,15 @@ class TopBar extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.close_rounded),
               onPressed: () {},
-              iconSize: 26,
+              iconSize: AppConstants.topbarIconSize,
               color: AppColor.customGreen,
             ),
             Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  width: 120,
-                  height: 120,
+                  margin: const EdgeInsets.only(top: AppConstants.topPaddingUserAvatar),
+                  width: AppConstants.userAvatarSize,
+                  height: AppConstants.userAvatarSize,
                   decoration: ShapeDecoration(
                     image: DecorationImage(
                       image: Image.asset(AppImages.userAvatar).image,
@@ -49,7 +49,7 @@ class TopBar extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: AppConstants.bottomPaddingUserAvatar,
                 ),
                 Text(
                   strings.userName,
@@ -60,7 +60,7 @@ class TopBar extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.exit_to_app_rounded),
               onPressed: () {},
-              iconSize: 26,
+              iconSize: AppConstants.topbarIconSize,
               color: AppColor.customGreen,
             ),
           ],
