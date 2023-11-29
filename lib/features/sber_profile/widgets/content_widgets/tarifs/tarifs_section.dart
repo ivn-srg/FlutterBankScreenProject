@@ -11,7 +11,7 @@ class TarifsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 28),
+      margin: const EdgeInsets.symmetric(vertical: AppConstants.betweenSectionsPadding),
       child: Column(
         children: [
           DescriptionOfSection(strings.secondSectionTitle, strings.secondSectionSubtitle),

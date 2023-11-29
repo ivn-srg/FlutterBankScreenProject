@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/globals.dart';
 import '../widgets/widgets.dart';
 
 class SberProfileScreen extends StatelessWidget {
@@ -7,7 +8,7 @@ class SberProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: AppConstants.verticalPadding),
       physics: const NeverScrollableScrollPhysics(),
       children: const [
       ServicesSection(),

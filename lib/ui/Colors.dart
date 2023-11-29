@@ -11,4 +11,7 @@ class AppColor {
   static const Color colorOfTopbar = Colors.white;
   static Color colorOfDivider = Colors.grey.withOpacity(0.4);
   static Color colorOfTrailingIcon = Colors.black.withOpacity(0.5);
+  static Color colorOfLabelText = Colors.black.withOpacity(0.55);
+  static Color colorOfChip = Colors.black.withOpacity(0.08);
+  static Color colorOfSideChip = Colors.transparent;
 }

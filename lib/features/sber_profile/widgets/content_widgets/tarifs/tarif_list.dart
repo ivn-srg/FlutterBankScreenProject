@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/Model/Tarif.dart';
+import 'package:untitled1/globals.dart';
 import 'package:untitled1/ui/Colors.dart';
+import 'package:untitled1/ui/images.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class ListOfTarifs extends StatelessWidget {
@@ -12,17 +14,18 @@ class ListOfTarifs extends StatelessWidget {
   Widget build(BuildContext context) {
     var tarifs = Tarif.listOfTarifs;
 
-    return Container(
-      // margin: const EdgeInsets.symmetric(vertical: 12),
-      height: 215,
+    return SizedBox(
+      height: AppConstants.tarifListHeight,
       child: ListView.separated(
-        padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(AppConstants.tarifListVerticalPadding),
           physics: const NeverScrollableScrollPhysics(),
           itemCount: tarifs.length,
           separatorBuilder: (context, i) => Container(
-                padding: const EdgeInsets.only(left: 70),
-                child:
-                    Divider(height: 2.0, color: AppColor.colorOfDivider),
+                padding: const EdgeInsets.only(
+                    left: AppConstants.tarifListDividerLeftPadding),
+                child: Divider(
+                    height: AppConstants.tarifListDividerHeight,
+                    color: AppColor.colorOfDivider),
               ),
           itemBuilder: (context, index) => ListTile(
                 title: Text(
@@ -34,10 +37,9 @@ class ListOfTarifs extends StatelessWidget {
                         style: lightTheme.textTheme.labelMedium)
                     : null,
                 leading: tarifs[index].imageOfTarif,
-                trailing: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 14,
-                  color: AppColor.colorOfTrailingIcon,
+                trailing: Image.asset(
+                  AppImages.disclosure,
+                  height: AppConstants.tarifListTrailingIconSize,
                 ),
                 onTap: () {},
               )),

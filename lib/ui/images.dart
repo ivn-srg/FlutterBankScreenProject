@@ -5,4 +5,5 @@ class AppImages {
   static const String speedometer = 'assets/images/speedometer.png';
   static const String percent = 'assets/images/percent.png';
   static const String arrows = 'assets/images/arrows.png';
+  static const String disclosure = 'assets/images/disclosure.png';
 }

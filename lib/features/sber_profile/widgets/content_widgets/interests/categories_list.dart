@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/Model/CategoryOfInterest.dart';
+import 'package:untitled1/globals.dart';
+import 'package:untitled1/ui/Colors.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class CategoryChipsState extends StatefulWidget {
@@ -16,12 +18,12 @@ class _CategoryChipsStateState extends State<CategoryChipsState> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: AppConstants.chipHorizontalPadding),
       child: Wrap(
-        runSpacing: -2,
+        runSpacing: AppConstants.chipRunSpacing,
         children: categories.map((category) {
           return Container(
-            margin: const EdgeInsets.only(right: 5),
+            margin: const EdgeInsets.only(right: AppConstants.chipRightPadding),
             child: ChoiceChip(
               selected: category.isSelected,
               onSelected: (selected) {
@@ -30,11 +32,11 @@ class _CategoryChipsStateState extends State<CategoryChipsState> {
                 });
               },
               label: Text(category.name),
-              backgroundColor: Colors.black.withOpacity(0.08),
+              backgroundColor: AppColor.colorOfChip,
               labelStyle: lightTheme.textTheme.bodySmall,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-                side: const BorderSide(color: Colors.transparent, width: 0),
+                borderRadius: BorderRadius.circular(AppConstants.chipBorderRadius),
+                side: BorderSide(color: AppColor.colorOfSideChip, width: AppConstants.chipBorderSideWidth),
               ),
             ),
           );

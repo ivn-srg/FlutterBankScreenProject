@@ -8,27 +8,27 @@ final lightTheme = ThemeData(
     textTheme: TextTheme(
       titleLarge: const TextStyle(
         color: Colors.black,
-        fontSize: 26,
+        fontSize: 24,
         fontFamily: 'SF Pro Display',
         fontWeight: FontWeight.w700,
       ),
       titleMedium: const TextStyle(
         color: Colors.black,
-        fontSize: 21,
+        fontSize: 20,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w700,
         letterSpacing: -0.70,
       ),
       bodyLarge: const TextStyle(
         color: Colors.black,
-        fontSize: 17,
+        fontSize: 16,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
-        letterSpacing: -0.5,
+        letterSpacing: -0.4,
       ),
       bodyMedium: const TextStyle(
         color: Colors.black,
-        fontSize: 17,
+        fontSize: 16,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.40,
@@ -36,32 +36,33 @@ final lightTheme = ThemeData(
       ),
       bodySmall: const TextStyle(
         color: Colors.black,
-        fontSize: 15,
+        fontSize: 14,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.41,
       ),
       labelLarge: TextStyle(
-        color: Colors.black.withOpacity(0.55),
-        fontSize: 17,
+        color: AppColor.colorOfLabelText,
+        fontSize: 16,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
-        letterSpacing: -0.5,
+        letterSpacing: -0.4,
       ),
       labelMedium: TextStyle(
-        color: Colors.black.withOpacity(0.6),
-        fontSize: 15,
+        color: AppColor.colorOfLabelText,
+        fontSize: 14,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.42,
         height: 1.2
       ),
       labelSmall: TextStyle(
-        color: Colors.black.withOpacity(0.55),
+        color: AppColor.colorOfLabelText,
         fontSize: 14,
         fontFamily: 'SF Pro Text',
         fontWeight: FontWeight.w500,
         letterSpacing: -0.41,
+        height: 1.2
       ),
     ),
     scaffoldBackgroundColor: AppColor.lightGray);
