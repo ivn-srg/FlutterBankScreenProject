@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/globals.dart';
+import 'package:untitled1/ui/Colors.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 import '/ui/images.dart';
 
@@ -12,7 +13,7 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(top: 15),
-        color: Colors.white,
+        color: AppColor.colorOfTopbar,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +22,7 @@ class TopBar extends StatelessWidget {
               icon: const Icon(Icons.close_rounded),
               onPressed: () {},
               iconSize: 26,
-              color: Colors.customGreen,
+              color: AppColor.customGreen,
             ),
             Column(
               children: [
@@ -39,7 +40,7 @@ class TopBar extends StatelessWidget {
                     ),
                     shadows: const [
                       BoxShadow(
-                        color: Color(0x7A1D1D25),
+                        color: AppColor.colorOfShadowNearImage,
                         blurRadius: 24,
                         offset: Offset(0, 16),
                         spreadRadius: -16,
@@ -60,7 +61,7 @@ class TopBar extends StatelessWidget {
               icon: const Icon(Icons.exit_to_app_rounded),
               onPressed: () {},
               iconSize: 26,
-              color: Colors.customGreen,
+              color: AppColor.customGreen,
             ),
           ],
         ));
