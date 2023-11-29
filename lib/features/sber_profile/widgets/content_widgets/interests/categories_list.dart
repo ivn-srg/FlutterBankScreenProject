@@ -7,10 +7,10 @@ class CategoryChipsState extends StatefulWidget {
 
 
   @override
-  State<CategoryChipsState> createState() => __CategoryChipsStateState();
+  State<CategoryChipsState> createState() => _CategoryChipsStateState();
 }
 
-class __CategoryChipsStateState extends State<CategoryChipsState> {
+class _CategoryChipsStateState extends State<CategoryChipsState> {
   var categories = CategoryOfInterest.listOfCategories;
 
   @override
@@ -41,6 +41,5 @@ class __CategoryChipsStateState extends State<CategoryChipsState> {
         }).toList(),
       ),
     );
-    ;
   }
 }

@@ -6,15 +6,13 @@ class SberProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 30),
-      child: ListView(
-        physics: const NeverScrollableScrollPhysics(),
-        children: const [
-        ServicesSection(),
-        TarifsSection(),
-        InterestsSection()
-      ]),
-    );
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 30),
+      physics: const NeverScrollableScrollPhysics(),
+      children: const [
+      ServicesSection(),
+      TarifsSection(),
+      InterestsSection()
+    ]);
   }
 }
