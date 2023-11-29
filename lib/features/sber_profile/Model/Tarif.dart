@@ -1,20 +1,41 @@
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:untitled1/ui/images.dart';
 
 class Tarif {
   String name;
   String addInfo;
-  SvgPicture imageOfTarif;
+  Image imageOfTarif;
 
   Tarif(
     this.name,
     this.addInfo,
     this.imageOfTarif,
   );
-  // {
-  //   if (this.addInfo == null) {
-  //     this.addInfo = "";
-  //   } else {
-  //     this.addInfo = addInfo;
-  //   }
-  // }
+
+  static var listOfTarifs = [
+    Tarif(
+        "Изменить суточный лимит",
+        "На платежи и переводы",
+        Image.asset(
+          AppImages.speedometer,
+          width: 38,
+          height: 38,
+        )),
+    Tarif(
+        "Переводы без комиссии",
+        "Показать остаток в этом месяце",
+        Image.asset(
+          AppImages.percent,
+          width: 38,
+          height: 38,
+        )),
+    Tarif(
+        "Информация о тарифах и лимитах",
+        "",
+        Image.asset(
+          AppImages.arrows,
+          width: 38,
+          height: 38,
+        ))
+  ];
 }
