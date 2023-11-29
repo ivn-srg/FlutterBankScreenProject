@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/ui/Colors.dart';
 
 final lightTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGray),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColor.lightGray),
     useMaterial3: true,
     dividerColor: Colors.grey[300],
-    // primarySwatch: Colors.green,
     textTheme: TextTheme(
       titleLarge: const TextStyle(
         color: Colors.black,
@@ -64,4 +64,4 @@ final lightTheme = ThemeData(
         letterSpacing: -0.41,
       ),
     ),
-    scaffoldBackgroundColor: Colors.lightGray);
+    scaffoldBackgroundColor: AppColor.lightGray);

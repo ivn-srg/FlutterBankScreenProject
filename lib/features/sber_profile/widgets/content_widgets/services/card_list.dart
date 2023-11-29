@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/Model/Card.dart';
+import 'package:untitled1/ui/Colors.dart';
 import 'package:untitled1/ui/theme/theme.dart';
 
 class CardList extends StatelessWidget {
@@ -64,19 +65,19 @@ class CardList extends StatelessWidget {
 
   ShapeDecoration shapeDecoration() {
     return ShapeDecoration(
-      color: Colors.white,
+      color: AppColor.colorOfCard,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
       shadows: const [
         BoxShadow(
-          color: Color(0x114F4F6C),
+          color: AppColor.colorOfShadow1,
           blurRadius: 14,
           offset: Offset(0, 8),
           spreadRadius: 0,
         ),
         BoxShadow(
-          color: Color(0x14000000),
+          color: AppColor.colorOfShadow2,
           blurRadius: 10,
           offset: Offset(0, 2),
           spreadRadius: 0,

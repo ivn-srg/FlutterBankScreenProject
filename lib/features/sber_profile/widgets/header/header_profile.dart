@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/features/sber_profile/sber_profile_screens_export.dart';
 import 'package:untitled1/features/sber_settings/view/sber_settings_screen.dart';
+import 'package:untitled1/ui/Colors.dart';
 import 'tab_bar.dart';
 import 'top_bar.dart';
 
@@ -38,13 +39,13 @@ class HeaderProfile extends StatelessWidget {
   }
 
   BoxDecoration _boxDecoration() {
-    return BoxDecoration(
-      color: Colors.white,
+    return const BoxDecoration(
+      color: AppColor.colorOfTabbar,
       boxShadow: [
         BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: AppColor.colorOfShadow1,
             blurRadius: 16,
-            offset: const Offset(0, 20))
+            offset: Offset(0, 20))
       ],
     );
   }
